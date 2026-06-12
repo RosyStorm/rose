@@ -1,0 +1,21 @@
+# 顶部导航菜单
+# 调整这里的顺序会改变导航条的显示顺序；删除条目则从导航中移除
+
+main:
+  - title: "首页"
+    url: /
+
+  - title: "归档"
+    url: /year-archive/
+
+  - title: "分类"
+    url: /categories/
+
+  - title: "标签"
+    url: /tags/
+
+  - title: "关于"
+    url: /about/
+
+  - title: "Markdown 指南"
+    url: /markdown/

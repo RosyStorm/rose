@@ -1,0 +1,230 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your entire site, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# `jekyll serve -l -H localhost`. If you change this file, please restart the
+# server process.
+
+# Basic Site Settings
+locale                   : "zh-CN"
+lang                     : "zh-CN"
+site_theme               : "dark"
+title                    : "我的博客"
+title_separator          : "-"
+name                     : &name "博客作者"
+description              : &description "记录技术、生活与思考的个人博客"
+# 部署到 GitHub Pages 时，把下面两行改成你自己的仓库地址
+url                      : https://yourusername.github.io # 形如 https://<GitHub用户名>.github.io
+baseurl                  : ""
+repository               : "yourusername/yourusername.github.io" # 形如 <用户名>/<用户名>.github.io
+keywords                 : "博客, 技术, 生活, 笔记, 随笔"
+
+# Site Author
+author:
+  # Biographic information
+  avatar           : "profile.png"
+  name             : "博客作者"
+  pronouns         :
+  bio              : "记录代码、想法与生活"
+  location         : "上海, 中国"
+  employer         :
+  uri              :
+  email            : "your@email.com"
+
+  # Repositories and software development
+  github           : "yourusername"
+
+  # Social media
+  bluesky          :
+  weibo            :
+  zhihu            :
+  twitter          :
+
+# Site Settings
+teaser                   :
+breadcrumbs              : false
+words_per_minute         : 200
+future                   : true
+read_more                : "disabled"
+talkmap_link             : false
+comments:
+  # 评论系统：Giscus（基于 GitHub Discussions）
+  # 部署后请到 https://giscus.app/zh-CN 获取 repo_id / category_id 后填入下方
+  provider               : "giscus"
+  giscus:
+    repo                 : "yourusername/yourusername.github.io"
+    repo_id              : "REPLACE_WITH_GISCUS_REPO_ID"
+    category             : "Comments"
+    category_id          : "REPLACE_WITH_GISCUS_CATEGORY_ID"
+    mapping              : "pathname"
+    strict               : "0"
+    reactions_enabled    : "1"
+    emit_metadata        : "0"
+    input_position       : "top"
+    theme                : "preferred_color_scheme"
+    lang                 : "zh-CN"
+    crossorigin          : "anonymous"
+atom_feed:
+  hide                   : false
+  path                   :
+
+
+# SEO Related
+google_site_verification :
+bing_site_verification   :
+
+
+# Social Sharing
+twitter:
+  username               : &twitter
+facebook:
+  username               :
+  app_id                 :
+  publisher              :
+og_image                 :
+og_description           :
+social:
+  type                   : Person
+  name                   :
+  links:
+
+
+# Analytics —— Google Analytics 4
+# 部署后请到 https://analytics.google.com/ 创建 GA4 媒体资源，拿到 tracking_id 后填入
+# 注意：模板使用 site.analytics.google.tracking_id 字段
+analytics:
+  provider               : "google-analytics-4"
+  google:
+    tracking_id          : "G-REPLACE_WITH_YOUR_ID"
+    anonymize_ip         : true
+
+
+# Reading Files
+include:
+  - .htaccess
+  - _pages
+  - files
+exclude:
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+  - .asset-cache
+  - .bundle
+  - .github
+  - .jekyll-assets-cache
+  - .sass-cache
+  - assets/js/_main.js
+  - assets/js/plugins
+  - assets/js/vendor
+  - CHANGELOG
+  - Capfile
+  - config
+  - Dockerfile
+  - Gemfile
+  - Gruntfile.js
+  - gulpfile.js
+  - LICENSE
+  - local
+  - log
+  - node_modules
+  - package.json*
+  - Rakefile
+  - README
+  - tmp
+  - vendor
+keep_files:
+  - .git
+  - .svn
+encoding: "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+
+# Conversion
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
+
+# Markdown Processing
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+
+
+# Collections —— 混合博客不再需要 publications / talks / teaching / portfolio
+collections: {}
+
+# Defaults per collection / page type
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+
+
+# Sass/SCSS
+sass:
+  sass_dir: _sass
+  style: compressed
+
+
+# Outputting
+permalink: /:categories/:title/
+timezone: Asia/Shanghai
+
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-gist
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-redirect-from
+  - jemoji
+
+# Mimic GitHub Pages with --safe
+whitelist:
+  - jekyll-feed
+  - jekyll-gist
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-redirect-from
+  - jemoji
+
+
+# Archives
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+
+
+# HTML Compression
+compress_html:
+  clippings: all
+  ignore:
+    envs: development

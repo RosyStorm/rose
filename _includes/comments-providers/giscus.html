@@ -1,0 +1,23 @@
+{% if site.comments.giscus.repo_id and site.comments.giscus.category_id %}
+<script src="https://giscus.app/client.js"
+        data-repo="{{ site.comments.giscus.repo }}"
+        data-repo-id="{{ site.comments.giscus.repo_id }}"
+        data-category="{{ site.comments.giscus.category }}"
+        data-category-id="{{ site.comments.giscus.category_id }}"
+        data-mapping="{{ site.comments.giscus.mapping | default: 'pathname' }}"
+        data-strict="{{ site.comments.giscus.strict | default: '0' }}"
+        data-reactions-enabled="{{ site.comments.giscus.reactions_enabled | default: '1' }}"
+        data-emit-metadata="{{ site.comments.giscus.emit_metadata | default: '0' }}"
+        data-input-position="{{ site.comments.giscus.input_position | default: 'top' }}"
+        data-theme="{{ site.comments.giscus.theme | default: 'preferred_color_scheme' }}"
+        data-lang="{{ site.comments.giscus.lang | default: 'zh-CN' }}"
+        data-loading="lazy"
+        crossorigin="{{ site.comments.giscus.crossorigin | default: 'anonymous' }}"
+        async>
+</script>
+{% else %}
+<div class="notice--warning" style="padding: 1em; border: 1px solid #f0c674; border-radius: 4px; background: #fff8e1;">
+  <strong>评论系统未配置</strong>：请在 <code>_config.yml</code> 中填写 Giscus 的 <code>repo_id</code> 与 <code>category_id</code>。
+  打开 <a href="https://giscus.app/zh-CN" target="_blank">giscus.app</a> 用你的仓库生成 ID。
+</div>
+{% endif %}

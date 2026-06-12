@@ -1,0 +1,10 @@
+# Authors —— 单作者配置
+# 在文章的 frontmatter 中通过 author: 你的名字 来指定作者
+# 如果只有一位作者，可以直接复用 _config.yml 中的 author.* 字段，不必在此重复
+
+博客作者:
+  name        : "博客作者"
+  avatar      : "profile.png"
+  bio         : "记录代码、想法与生活"
+  email       : "your@email.com"
+  uri         : "https://yourusername.github.io"
