@@ -1,3 +1,68 @@
 <script src="{{ base_path }}/assets/js/main.min.js"></script>
 
 {% include analytics.html %}
+
+<script>
+/* ==========================================================================
+   主题切换：蓝（light） / 紫（dark）
+   1. 首次访问读 localStorage，否则用 _config.yml 中 site_theme 默认值
+   2. 切换时改 <html data-theme="..."> 和 #theme-icon 类
+   3. Giscus 同步切换主题
+   ========================================================================== */
+(function() {
+  var DEFAULT_THEME = '{{ site.site_theme | default: "default" }}'; // "default"=light(蓝) / "dark"
+  var STORAGE_KEY = 'rosy-theme';
+
+  function getTheme() {
+    var stored = localStorage.getItem(STORAGE_KEY);
+    if (stored === 'light' || stored === 'dark') return stored;
+    return DEFAULT_THEME === 'dark' ? 'dark' : 'light';
+  }
+
+  function applyTheme(theme) {
+    var html = document.documentElement;
+    if (theme === 'dark') {
+      html.setAttribute('data-theme', 'dark');
+    } else {
+      html.removeAttribute('data-theme');
+    }
+    var icon = document.getElementById('theme-icon');
+    if (icon) {
+      icon.className = theme === 'dark'
+        ? 'fa-solid fa-sun'   /* 当前是暗，图标显示太阳（提示点此变亮） */
+        : 'fa-solid fa-moon'; /* 当前是亮，图标显示月亮（提示点此变暗） */
+    }
+    document.body.setAttribute('data-current-theme', theme);
+    localStorage.setItem(STORAGE_KEY, theme);
+    syncGiscus(theme);
+  }
+
+  function syncGiscus(theme) {
+    var giscusTheme = theme === 'dark' ? 'dark' : 'light';
+    try {
+      var iframe = document.querySelector('iframe.giscus-frame');
+      if (iframe && iframe.contentWindow) {
+        iframe.contentWindow.postMessage(
+          { giscus: { setConfig: { theme: giscusTheme } } },
+          'https://giscus.app'
+        );
+      }
+    } catch (e) { /* Giscus 还没加载完，忽略 */ }
+  }
+
+  // 立即应用（避免 FOUC）
+  applyTheme(getTheme());
+
+  // 绑定按钮
+  document.addEventListener('DOMContentLoaded', function() {
+    var btn = document.getElementById('theme-toggle');
+    if (btn) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        var current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+        applyTheme(current === 'dark' ? 'light' : 'dark');
+      });
+    }
+  });
+})();
+</script>

@@ -9,7 +9,7 @@
 # Basic Site Settings
 locale                   : "zh-CN"
 lang                     : "zh-CN"
-site_theme               : "dark"
+site_theme               : "default"
 title                    : "我的博客"
 title_separator          : "-"
 name                     : &name "博客作者"
