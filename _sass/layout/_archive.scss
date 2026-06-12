@@ -112,6 +112,20 @@
    Grid view
    ========================================================================== */
 
+.grid__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2em;
+  margin-top: 1em;
+
+  .grid__item {
+    flex: 1 1 220px;          /* 220px 起，弹性伸缩 */
+    min-width: 0;
+    margin: 0;                /* 覆盖 .grid__item 自带 margin-bottom */
+    width: auto !important;   /* 覆盖 susy gallery() 设的固定宽 */
+  }
+}
+
 .grid__item {
   margin-bottom: 2em;
 

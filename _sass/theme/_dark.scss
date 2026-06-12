@@ -1,32 +1,44 @@
 /* ==========================================================================
-   DARK THEME
+   DARK THEME —— 紫色主题
    ========================================================================== */
 
 /* Color codes used for the theme */
-$gray                       : #7a8288;
-$dark-gray                  : mix(#000, $gray, 40%);
-$darker-gray                : mix(#000, $gray, 60%);
+$gray                       : #6b6388;
+$dark-gray                  : #1a0e2e;
+$darker-gray                : #0d0518;
 $light-gray                 : mix(#fff, $gray, 50%);
 
-$background                 : #474747;
+/* 紫色主色板 */
+$violet-50                  : #f5f3ff;
+$violet-100                 : #ede9fe;
+$violet-200                 : #ddd6fe;
+$violet-300                 : #c4b5fd;
+$violet-400                 : #a78bfa;
+$violet-500                 : #8b5cf6;
+$violet-600                 : #7c3aed;
+$violet-700                 : #6d28d9;
+$violet-800                 : #5b21b6;
+$violet-900                 : #4c1d95;
+
+$background                 : #150f24;
 $background-light           : mix(#fff, $background, 80%);
 $background-lighter         : mix(#fff, $background, 90%);
-$text                       : #ffffff;
-$link                       : #0ea1c5;
+$text                       : #ece6ff;
+$link                       : $violet-400;
 $link-dark                  : mix(#000, $link, 25%);
 $link-light                 : mix(#fff, $link, 25%);
 
 /* Color codes used for the site */
-$danger-color               : #ee5f5b;
-$info-color                 : #2f7f93;
-$notice-color               : #7a8288;
-$success-color              : #62c462;
-$warning-color              : #f89406;
+$danger-color               : #f43f5e;
+$info-color                 : $violet-400;
+$notice-color               : $violet-300;
+$success-color              : #34d399;
+$warning-color              : #fbbf24;
 
 /* Other basic settings for the template */
-$border-radius              : 4px;
-$box-shadow                 : 0 1px 1px rgba(0, 0, 0, 0.125);
-$global-transition          : all 0.2s ease-in-out;
+$border-radius              : 10px;
+$box-shadow                 : 0 4px 20px rgba(139, 92, 246, 0.20);
+$global-transition          : all 0.3s ease-in-out;
 $masthead-height            : 70px;
 $navicon-width              : 28px;
 $navicon-height             : 4px;
@@ -35,20 +47,25 @@ $sidebar-screen-min-width   : 1024px;
 
 /* Dark theme for the site */
 html[data-theme="dark"] {
-    --global-base-color                 : #{$background};
+    --global-base-color                 : #{$text};
     --global-bg-color                   : #{$background};
-    --global-footer-bg-color            : #{$background};
-    --global-border-color               : #{$light-gray};
-    --global-dark-border-color          : #{$background-light};
-    --global-code-background-color      : #fafafa;
-    --global-code-text-color            : #{$darker-gray};
+    --global-footer-bg-color            : #{$darker-gray};
+    --global-border-color               : rgba(167, 139, 250, 0.18);
+    --global-dark-border-color          : rgba(167, 139, 250, 0.35);
+    --global-code-background-color      : #1f1535;
+    --global-code-text-color            : #{$violet-300};
     --global-fig-caption-color          : #{$light-gray};
     --global-link-color                 : #{$link};
-    --global-link-color-hover           : #{$link-dark};
-    --global-link-color-visited         : #{$link-light};
+    --global-link-color-hover           : #{$violet-200};
+    --global-link-color-visited         : #{$violet-300};
     --global-masthead-link-color        : #{$text};
-    --global-masthead-link-color-hover  : #{$background-light};
+    --global-masthead-link-color-hover  : #{$violet-300};
     --global-text-color                 : #{$text};
     --global-text-color-light           : #{$light-gray};
     --global-thead-color                : #{$background-lighter};
+
+    /* 紫色主题色变量 */
+    --theme-accent                      : #{$violet-500};
+    --theme-accent-light                : #{$violet-300};
+    --theme-accent-dark                 : #{$violet-700};
 }
