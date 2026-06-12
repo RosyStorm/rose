@@ -15,9 +15,9 @@ title_separator          : "-"
 name                     : &name "博客作者"
 description              : &description "记录技术、生活与思考的个人博客"
 # 部署到 GitHub Pages 时，把下面两行改成你自己的仓库地址
-url                      : https://yourusername.github.io # 形如 https://<GitHub用户名>.github.io
-baseurl                  : ""
-repository               : "yourusername/yourusername.github.io" # 形如 <用户名>/<用户名>.github.io
+url                      : https://RosyStorm.github.io # 形如 https://<GitHub用户名>.github.io
+baseurl                  : "/rose" # 项目站点（仓库名 rose）的子路径；用户站点（<用户名>.github.io）留空
+repository               : "RosyStorm/rose" # 形如 <用户名>/<用户名>.github.io
 keywords                 : "博客, 技术, 生活, 笔记, 随笔"
 
 # Site Author
@@ -33,7 +33,7 @@ author:
   email            : "your@email.com"
 
   # Repositories and software development
-  github           : "yourusername"
+  github           : "RosyStorm"
 
   # Social media
   bluesky          :
@@ -53,7 +53,7 @@ comments:
   # 部署后请到 https://giscus.app/zh-CN 获取 repo_id / category_id 后填入下方
   provider               : "giscus"
   giscus:
-    repo                 : "yourusername/yourusername.github.io"
+    repo                 : "RosyStorm/rose"
     repo_id              : "REPLACE_WITH_GISCUS_REPO_ID"
     category             : "Comments"
     category_id          : "REPLACE_WITH_GISCUS_CATEGORY_ID"
