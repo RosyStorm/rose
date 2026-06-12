@@ -42,10 +42,56 @@
 .archive__item-title {
   margin-bottom: 0.25em;
   font-family: $sans-serif-narrow;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5em;
+  line-height: 1.5;
+
+  > a {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.6em;
+    flex-wrap: wrap;
+  }
 
   a + a {
     opacity: 0.5;
   }
+}
+
+/* "2026-06-12 标题" 紧凑格式：小字号日期 + 粗体标题 */
+.archive__item-date {
+  flex: 0 0 auto;
+  font-family: $monospace;
+  font-size: 0.82em;
+  font-weight: 400;
+  color: var(--global-text-color-light);
+  background: var(--global-border-color);
+  padding: 0.1em 0.55em;
+  border-radius: 4px;
+  letter-spacing: 0;
+  white-space: nowrap;
+  transition: $global-transition;
+}
+
+.archive__item-title-text {
+  font-weight: 600;
+  font-size: 1em;
+  color: var(--global-text-color);
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.archive__item-permalink {
+  font-size: 0.85em;
+  opacity: 0.5;
+  margin-left: 0.3em;
+}
+
+.archive__item:hover .archive__item-date {
+  color: var(--theme-accent, var(--global-link-color));
+  background: var(--theme-accent-light, transparent);
 }
 
 /* remove border*/

@@ -36,11 +36,41 @@
 
 .page__title {
   margin-top: 0;
-  line-height: 1;
+  margin-bottom: 0.6em;
+  line-height: 1.25;
+  font-family: $sans-serif-narrow;
+  font-size: 1.8em;
+  font-weight: 700;
+  display: block;
+  padding: 0.7em 1em;
+  background: linear-gradient(120deg,
+    var(--global-bg-color) 0%,
+    var(--global-border-color) 100%);
+  border-left: 5px solid var(--theme-accent, var(--global-link-color));
+  border-radius: 0 10px 10px 0;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  position: relative;
+
+  /* 主题色：蓝（light）/ 紫（dark）—— 在 main.scss 末尾覆盖或用 mixin 注入 */
+  background: linear-gradient(120deg,
+    var(--global-bg-color) 0%,
+    var(--aurora-tint, var(--global-border-color)) 100%);
 
   & + .page__meta {
-    margin-top: -0.5em;
+    margin-top: 0.8em;
+    margin-left: 1em;
+    color: var(--global-text-color-light);
+    font-size: 0.9em;
   }
+}
+
+html[data-theme="dark"] .page__title {
+  background: linear-gradient(120deg,
+    rgba(139, 92, 246, 0.10) 0%,
+    rgba(124, 58, 237, 0.04) 100%);
+  border-left-color: $violet-400;
+  box-shadow: 0 2px 16px rgba(139, 92, 246, 0.15);
+  color: $violet-100;
 }
 
 .page__lead {
